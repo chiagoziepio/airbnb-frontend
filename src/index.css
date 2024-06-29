@@ -1,13 +1,51 @@
 :root{
   --subtle-text-color: rgba(255, 255, 255, 0.486);
   --main-text-color : white;
-  --shadow : 0px 23px -8px rgba(136,160,255,0.25)
+  --shadow : 0px 23px -8px rgba(136,160,255,0.25);
+  --blackBg : linear-gradient(60deg, #1c1c1c, #161616);
+  --secondary-color: rgba(255, 166, 0, 0.589);
+  --secondary-sec-color: rgba(153, 107, 23, 0.651);
+  --button-Bgcolor:linear-gradient(120deg,rgba(26, 26, 148, 0.658),rgb(6, 6, 228)) ;
 }
 
 *{
   padding :0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+}
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+.innerwidth{
+  width: 100%;
+  
+}
+.btn{
+  width: 6.5rem;
+  height: 2.7rem;
+  border: none;
+  font-size: 1rem;
+  background: var(--button-Bgcolor);
+  border-radius: 0.9rem;
+  color: var(--main-text-color);
+}
+
+@media(min-width:1336px){
+  .innerwidth{
+    max-width: 1000px ;
+    margin: auto;
+    
+  }
 }

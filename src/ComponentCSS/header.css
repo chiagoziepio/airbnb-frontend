@@ -1,0 +1,55 @@
+header{
+    background: var(--blackBg);
+    color: var(--main-text-color);
+    display: flex;
+    justify-content: space-between;
+    height: 4.2rem;
+}
+.logo{
+    position: relative;
+    width: 23%;
+    height: 100%;
+}
+.logo p{
+    font-family: "Playwrite MX", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+.logo p span{
+    color: var(--secondary-sec-color);
+    font-family:cursive ;
+    font-size:1.4rem ;
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    z-index: 3;
+}
+.linksBX{
+    display: flex;
+    align-items: center;
+    width:40% ;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-right:0.5rem;
+}
+ul li .navlink{
+    color: var(--subtle-text-color);
+    text-decoration: none;
+}
+ul li .navlink.active{
+    color: var(--main-text-color);
+}
+.nav-icon{
+    margin-right: 0.2rem;
+    
+}
+.navBtn{
+    color: var(--main-text-color);
+    text-decoration: none;
+}
