@@ -1,0 +1,82 @@
+.home{
+    flex-grow: 1;
+}
+.hero{
+    background: var(--blackBg);
+    color: var(--main-text-color);
+    
+}
+.heroBx{
+    padding: 1.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.heroTxt{
+    width: 60%;
+    height: 25rem;
+    position: relative;
+   
+}
+.firstTxt{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #eeeeeecb;
+}
+.firstTxt span{
+    font-size: 1.2rem;
+    color: var( --secondary-sec-color);
+}
+.orange-cirle{
+    width: 2.4rem;
+    height: 2.4rem;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    right: 3.8rem;
+    top: 65px;
+}
+.secondTxt{
+    color: var(--subtle-text-color);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+ .hero form{
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    height: 2.9rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.hero form input{
+    width: 85%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #333;
+    font-size: 1rem;
+    margin-left: 7px;
+}
+
+.secondPart .stats p{
+   color: var(--subtle-text-color);
+}
+.secondPart .stats span label{
+    color: var(--secondary-sec-color);
+}
+
+@media(max-width: 720px){
+    .heroBx{
+        justify-content: center;
+        align-items: center;
+        
+       
+    }
+    .orange-cirle{
+        right: 2.8rem;
+        top: 45px;
+    }
+}

@@ -4,6 +4,7 @@ header{
     display: flex;
     justify-content: space-between;
     height: 4.2rem;
+    padding: 0 0.8rem;
 }
 .logo{
     position: relative;
@@ -47,7 +48,7 @@ ul li .navlink.active{
 }
 .nav-icon{
     margin-right: 0.2rem;
-    
+
 }
 .navBtn{
     color: var(--main-text-color);
