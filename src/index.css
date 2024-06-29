@@ -1,11 +1,12 @@
 :root{
   --subtle-text-color: rgba(255, 255, 255, 0.486);
   --main-text-color : white;
-  --shadow : 0px 23px -8px rgba(136,160,255,0.25);
+  --shadow : 0px 23px 8px rgba(136,160,255,0.25);
   --blackBg : linear-gradient(60deg, #1c1c1c, #161616);
   --secondary-color: rgba(255, 166, 0, 0.589);
   --secondary-sec-color: rgba(153, 107, 23, 0.651);
   --button-Bgcolor:linear-gradient(120deg,rgba(26, 26, 148, 0.658),rgb(6, 6, 228)) ;
+  --primary-color :#1f3e72;
 }
 
 *{
@@ -42,6 +43,12 @@ body{
   justify-content: center;
   align-items: center;
 }
+.flexStart{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-start;
+}
 .innerwidth{
   width: 100%;
   
@@ -70,7 +77,16 @@ body{
  border-top-right-radius: 10rem;
 }
 .icon{
-  color: #1f3e72;
+  color: var(--primary-color);
+}
+.sectionTitle{
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+.des{
+  color: #17173d36;
+  font-size: 14px;
+  font-weight: 600;
 }
 @media(min-width:1336px){
   .innerwidth{

@@ -4,7 +4,7 @@
 .hero{
     background: var(--blackBg);
     color: var(--main-text-color);
-    
+    position: relative;
 }
 .heroBx{
     padding: 1.9rem;
@@ -35,7 +35,7 @@
     border-radius: 50%;
     position: absolute;
     right: 3.8rem;
-    top: 65px;
+    top: 45px;
 }
 .secondTxt{
     color: var(--subtle-text-color);
@@ -50,6 +50,7 @@
     height: 2.9rem;
     border-radius: 10px;
     margin-bottom: 2rem;
+    width: 99%;
 }
 .hero form input{
     width: 85%;
@@ -67,16 +68,29 @@
 .secondPart .stats span label{
     color: var(--secondary-sec-color);
 }
+.whiteBlur{
+    position: absolute;
+    top: 1.5rem;
+    left: 4.2rem;
+    width: 10.1rem;
+    height: 10.1rem;
+    background-color: #eee;
+    border-radius: 50%;
+    filter: blur(100px);
+}
 
 @media(max-width: 720px){
     .heroBx{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+       
         
        
     }
     .orange-cirle{
         right: 2.8rem;
-        top: 45px;
+        top: 25px;
     }
 }

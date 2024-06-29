@@ -5,6 +5,7 @@ import CountUp from "react-countup";
 const Hero = () => {
   return (
     <section className="hero">
+      <div className="whiteBlur"/>
       <div className="flexRow innerwidth heroBx  ">
         <div className=" flexCol heroTxt ">
           <div className="firstPart">
