@@ -1,0 +1,43 @@
+.offerBx{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+   
+}
+
+.txtpart{
+    width: 55%;
+    
+}
+
+.accordion{
+    background: var(--secondaryBg);
+    padding: 0.57rem;
+    min-height: 12rem;
+    border-radius: 10px;
+}
+.accordionBx{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 9px;
+    min-height: 50px;
+}
+.accordion-header h4{
+    color: var(--primary-color);
+    font-size: 15px;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+@media (max-width:680px){
+    .offerBx{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        
+    }
+}
