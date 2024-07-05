@@ -43,7 +43,7 @@ const Offer = () => {
                   </span>
                 </div>
 
-                {opened == index ? <p className="des">{offer.detail}</p> : ""}
+                {opened == index ? <p className=" accordion-content">{offer.detail}</p> : ""}
               </div>
             ))}
           </div>

@@ -5,6 +5,11 @@ header{
     justify-content: space-between;
     height: 4.2rem;
     padding: 0 0.8rem;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
 }
 .logo{
     position: relative;

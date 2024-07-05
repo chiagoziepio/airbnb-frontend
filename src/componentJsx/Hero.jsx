@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="whiteBlur"/>
-      <div className="flexRow innerwidth heroBx  ">
+      <div className=" innerwidth flexRow heroBx  ">
         <div className=" flexCol heroTxt ">
           <div className="firstPart">
             <div className="orange-cirle" />
