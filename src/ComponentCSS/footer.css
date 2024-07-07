@@ -1,0 +1,8 @@
+footer{
+    background: var(--blackBg);
+    margin-top: 2rem;
+    min-height: 4.5rem;
+    color:var(--subtle-text-color);
+   display: flex;
+   justify-content: center;
+}

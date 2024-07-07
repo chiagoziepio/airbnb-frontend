@@ -1,0 +1,78 @@
+.airbnb{
+    flex-grow: 1;
+}
+.airbnbBx{
+    margin-top: 2rem;
+}
+.intro{
+    width: 100%;
+}
+.intro p{
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-family: 600;
+}
+.apartmentbx{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.9rem;
+    margin-top: 1.2rem;
+
+}
+.apartment{
+    width: 45%;
+    max-width: 300px;
+    padding: 0.4rem;
+    transition: all .4s ease;
+}
+.apartment:hover{
+    scale: 1.013;
+}
+.apartmentImg{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.apartmentImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.apartmentDetail h4{
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-family: 600;
+    margin-bottom: 0.5rem;
+}
+.price-status .price{
+    color: var(--secondary-sec-color);
+    font-size: 18px;
+}
+.price-status .status{
+    color: var(--button-sec-color);
+    font-size: 18px;
+}
+.bookingBtn{
+    width: 95%;
+    background: var(--button-sec-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+}
+.taken{
+    cursor: not-allowed;
+    opacity: 0.3;
+    pointer-events: none;
+}
+/* .free{
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+} */
