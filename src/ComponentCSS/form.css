@@ -1,0 +1,53 @@
+.register,
+.login {
+  flex-grow: 1;
+}
+.formBx {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--secondaryBg);
+  width: 50%;
+  max-width: 400px;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+form h3{
+    margin: 0.4rem 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 22px;
+}
+.input-control {
+  width: 100%;
+  height: 2rem;
+  border-bottom: 1px solid #333;
+}
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 17px;
+  width: 85%;
+}
+form button{
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--button-sec-color);
+    font-size: 17px;
+    color: white;
+    padding: 0.2rem;
+    text-align: center;
+    margin: auto;
+}

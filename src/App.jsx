@@ -8,11 +8,12 @@ import Home from "./componentJsx/Home";
 import Airbnbs from "./componentJsx/Airbnbs";
 import ViewApartment from './componentJsx/ViewApartment';
 import MissingRoute from "./componentJsx/MissingRoutes"
+import ContextProvier from './context';
 function App() {
   
 
   return (
-    <>
+    <ContextProvier>
       <Routes>
         <Route path='/' element= {<Layout/>}>
 
@@ -25,7 +26,7 @@ function App() {
         
         </Route>
       </Routes>
-    </>
+    </ContextProvier>
   )
 }
 
