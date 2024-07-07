@@ -1,5 +1,6 @@
 import React from "react";
 import Apartments from "../Apartment";
+import { Link } from "react-router-dom";
 import "../ComponentCSS/airbnb.css";
 
 const Airbnbs = () => {
@@ -11,21 +12,31 @@ const Airbnbs = () => {
           <p>We boost to meet your taste</p>
         </div>
         <div className="apartmentbx">
-          {Apartments.map((apartment)=>(
-            <div className="apartment" key={apartment.id}>
+          {Apartments.map((apartment) => (
+            <Link to = {`/viewapartment/${apartment.id}`} className="apartmentLink" key={apartment.id}>
+              <div className="apartment" >
                 <div className="apartmentImg">
                   <img src={apartment.img} alt="" />
                 </div>
                 <div className="apartmentDetail">
                   <h4>{apartment.title}</h4>
                   <div className=" flexRow price-status">
-                      <span className="price">${apartment.rentalPrice}</span>
-                      <span className="status">{apartment.status}</span>
+                    <span className="price">${apartment.rentalPrice}</span>
+                    <span className="status">{apartment.status}</span>
                   </div>
                   <p>{apartment.location}</p>
                 </div>
-                <button className={apartment.status === "occupied"? "bookingBtn taken": "bookingBtn free"}>Rent now</button>
-            </div>
+                <button
+                  className={
+                    apartment.status === "occupied"
+                      ? "bookingBtn taken"
+                      : "bookingBtn free"
+                  }
+                >
+                  Rent now
+                </button>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

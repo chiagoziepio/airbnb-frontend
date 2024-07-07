@@ -6,6 +6,7 @@ import Login from "./componentJsx/Login";
 import Register from "./componentJsx/Register";
 import Home from "./componentJsx/Home";
 import Airbnbs from "./componentJsx/Airbnbs";
+import ViewApartment from './componentJsx/ViewApartment';
 import MissingRoute from "./componentJsx/MissingRoutes"
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
           <Route path='/airbnbs' element = {<Airbnbs/>}/>
           < Route path = '/login' element = {<Login/>}/>
           <Route path = '/register' element = {<Register/>}/>
+          <Route path='/viewapartment/:id' element={<ViewApartment/>}/>
           < Route path = "*" element = {<MissingRoute/>}/>
         
         </Route>

@@ -1,0 +1,54 @@
+.viweApartment{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.veiwApartmentBx{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.DApartment{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 500px;
+    height: 30rem;
+    padding: 6px;
+}
+.DApartment .apartImg{
+    width: 100%;
+    height: 60%;
+    border-radius: 10px;
+}
+.DApartment .apartImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.title-status{
+    display: flex;
+    flex-wrap: wrap;
+}
+.title-status h4{
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-family: 600;
+}
+.title-status .status{
+    color: var(--button-sec-color);
+    font-size: 18px;
+}
+.other-detail span{
+    color: var(--secondary-sec-color);
+    font-size: 18px;
+}
+.other-detail .apartmentLocation{
+    color: var(--button-sec-color);
+    font-size: 20px;
+    margin: 0.5rem 0;
+}

@@ -21,10 +21,14 @@
 
 }
 .apartment{
-    width: 45%;
-    max-width: 300px;
+    
     padding: 0.4rem;
     transition: all .4s ease;
+}
+.apartmentLink{
+    width: 45%;
+    max-width: 300px;
+    text-decoration: none;
 }
 .apartment:hover{
     scale: 1.013;
