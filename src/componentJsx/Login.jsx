@@ -15,11 +15,17 @@ const Login = () => {
     setCpassword,
     name,
     setName,
+    handleLogin
   } = useContext(Context);
+const handleLoginSubmit = (e)=>{
+  e.preventDefault()
+  handleLogin()
+}
+
   return (
     <div className="login">
       <div className="innerwidth formBx">
-        <form>
+        <form onSubmit={handleLoginSubmit}>
           <h3>Sign In</h3>
 
           <div className="input-control">

@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Apartments from "../Apartment";
 import { Link } from "react-router-dom";
 import "../ComponentCSS/airbnb.css";
+import { Context } from "../context";
+import axios from "axios"
+import { ReducerTerms } from "../ReducerFile";
+
 
 const Airbnbs = () => {
+  const {dispatch, state} = useContext(Context)
+  const apartment = state.apartmentData
+  useEffect(()=>{
+    
+    try {
+      dispatch({type: ReducerTerms.FETCH_APARTMENT_START})
+      const getApartments = async()=>{
+      const res = await axios.get("http://localhost:4000/api/airbnb/apartment//getapartments");
+      const data = await res.data;
+      dispatch({type: ReducerTerms.FETCH_APARTMENT_SUCCESS, payload: data})
+      console.log(apartment);
+      }
+    } catch (error) {
+      
+    }
+    
+    
+  },[])
   return (
     <div className="airbnb">
       <div className="innerwidth airbnbBx">
