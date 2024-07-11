@@ -2,7 +2,7 @@
 export const InitialState ={
     user: null,
     apartmentData: [],
-    loading: true,
+    loading: false,
     error:null,
     feedbackMsg: ""
 }
@@ -28,8 +28,11 @@ export const ReducerTerms = {
     GET_BOOKED_APARTMENT_SUCCESS: "get_bookedapartment_success",
     LOGIN_START:"login_start",
     LOGIN_SUCCESS:"login_success",
-    LOGIN_ERROR:"login_error"
-
+    LOGIN_ERROR:"login_error",
+    REGISTER_START: "register_start",
+    REGISTER_SUCCESS: "register_success",
+    REGISTER_ERROR: "register_error"
+    
 
 }
 
@@ -40,7 +43,7 @@ export const ReducerTerms = {
             
             return{
                 ...state,
-                loading:false
+                loading:true
             }
             
             
@@ -95,7 +98,31 @@ export const ReducerTerms = {
             break;
     
         
-        case ReducerTerms.POST_ERROR:
+        case ReducerTerms.REGISTER_START:
+            console.log("register start");
+            return{
+                ...state,
+                error: null,
+                feedbackMsg: "",
+                loading: true
+            }
+            break;
+        case ReducerTerms.REGISTER_SUCCESS:
+            console.log("register success");
+            return{
+                ...state,
+                error: null,
+                feedbackMsg: action.payload,
+                loading: false
+            }
+            
+            break;
+        case ReducerTerms.REGISTER_ERROR:
+            return{
+                ...state,
+                error: action.payload,
+                feedbackMsg: ""
+            }
             
             break;
     
