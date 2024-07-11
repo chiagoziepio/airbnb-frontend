@@ -3,29 +3,36 @@ import Apartments from "../Apartment";
 import { Link } from "react-router-dom";
 import "../ComponentCSS/airbnb.css";
 import { Context } from "../context";
-import axios from "axios"
+import axios from "axios";
+import { myApp } from "../context";
 import { ReducerTerms } from "../ReducerFile";
 
-
 const Airbnbs = () => {
-  const {dispatch, state} = useContext(Context)
-  const apartment = state.apartmentData
-  useEffect(()=>{
-    
-    try {
-      dispatch({type: ReducerTerms.FETCH_APARTMENT_START})
-      const getApartments = async()=>{
-      const res = await axios.get("http://localhost:4000/api/airbnb/apartment//getapartments");
-      const data = await res.data;
-      dispatch({type: ReducerTerms.FETCH_APARTMENT_SUCCESS, payload: data})
-      console.log(apartment);
+  const { dispatch, state } = useContext(Context);
+  const apartment = state.apartmentData;
+  useEffect(() => {
+    const HandleGetApartments = async () => {
+      try {
+        dispatch({ type: ReducerTerms.FETCH_APARTMENT_START });
+        const res = await axios.get(
+          "http://localhost:4000/api/airbnb/apartment//getapartments"
+        );
+        const data = await res.data.msg;
+        console.log(data);
+        await dispatch({ type: ReducerTerms.FETCH_APARTMENT_SUCCESS, payload: data});
+        
+      } catch (error) {
+        dispatch({
+          type: ReducerTerms.FETCH_APARTMENT_ERROR,
+          payload: error.response.data.msg,
+        });
+
+        console.log(error);
+        
       }
-    } catch (error) {
-      
-    }
-    
-    
-  },[])
+    };
+    HandleGetApartments();
+  }, [dispatch]);
   return (
     <div className="airbnb">
       <div className="innerwidth airbnbBx">
@@ -35,8 +42,12 @@ const Airbnbs = () => {
         </div>
         <div className="apartmentbx">
           {Apartments.map((apartment) => (
-            <Link to = {`/viewapartment/${apartment.id}`} className="apartmentLink" key={apartment.id}>
-              <div className="apartment" >
+            <Link
+              to={`/viewapartment/${apartment.id}`}
+              className="apartmentLink"
+              key={apartment.id}
+            >
+              <div className="apartment">
                 <div className="apartmentImg">
                   <img src={apartment.img} alt="" />
                 </div>

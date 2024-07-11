@@ -1,27 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../context";
 import { Link } from "react-router-dom";
 import "../ComponentCSS/form.css";
+import { ReducerTerms } from "../ReducerFile";
+import { myApp } from "../context";
+import axios from "axios";
 
 const Login = () => {
-  const {
-    email,
-    setEmail,
-    username,
-    setUsername,
-    password,
-    setPassword,
-    cPassword,
-    setCpassword,
-    name,
-    setName,
-    handleLogin
-  } = useContext(Context);
-const handleLoginSubmit = (e)=>{
+  const { dispatch, state } = useContext(Context);
+const [ username , setUsername] = useState("")
+const [password, setPassword]= useState("")
+const handleLoginSubmit =  (e)=>{
   e.preventDefault()
+  axios.defaults.withCredentials = true;
+  const handleLogin = async()=>{
+    
+    try {
+       dispatch({
+        type: ReducerTerms.LOGIN_START
+      })
+      const res = await axios.post("http://localhost:4000/api/airbnb/user/login" ,{username,password});
+      const data = await res.data.msg;
+      dispatch({
+        type: ReducerTerms.LOGIN_SUCCESS,
+        payload: data
+      })
+      
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type:ReducerTerms.LOGIN_ERROR,
+        payload: error.response.data.msg
+      })
+    }
+  }
   handleLogin()
 }
-
   return (
     <div className="login">
       <div className="innerwidth formBx">

@@ -1,9 +1,9 @@
 
 export const InitialState ={
     user: null,
-    apartmentData: null,
-    loading: false,
-    error:false,
+    apartmentData: [],
+    loading: true,
+    error:null,
     feedbackMsg: ""
 }
 
@@ -35,52 +35,66 @@ export const ReducerTerms = {
 
  const Reducer = (state, action) =>{
     switch (action.type) {
-        case ReducerTerms.FETCH_START:
-            return{
-                loading: true,
-                error: false
-            }
-            
-    
-        case ReducerTerms.FETCH_SUCCESS:
-            
-            break;
-    
-        case ReducerTerms.FETCH_ERROR:
-            
-            break;
-    
-        case ReducerTerms.POST_START:
-            
-            break;
-    
         case ReducerTerms.LOGIN_START:
+            console.log("login start");
+            
             return{
                 ...state,
-                loading:true,
-                error: false,
-                feedbackMsg: ""
+                loading:false
             }
             
-            break;
+            
         case ReducerTerms.LOGIN_SUCCESS:
+            console.log("login success");
+            
             return{
                 ...state,
                 loading:false,
-                error: false,
                 feedbackMsg: action.payload
             }
             
-            break;
+            
         case ReducerTerms.LOGIN_ERROR:
+            console.log("login error");
             return{
                 ...state,
-                loading:false,
-                error: true,
-                feedbackMsg: action.payload
+                error:  action.payload,
+            }
+            
+         
+        case ReducerTerms.FETCH_APARTMENT_START:
+            console.log("fAp start");
+            return{
+                ...state,
+                loading: true,
+                error: null
+            }
+            
+    
+        case ReducerTerms.FETCH_APARTMENT_SUCCESS:
+            console.log("fAp success");
+            return{
+                ...state,
+                loading: false,
+                apartmentData: action.payload,
+                error: null
+            }
+            
+            
+    
+        case ReducerTerms.FETCH_APARTMENT_ERROR:
+            console.log("fAp error");
+            return{
+                
+                ...state,
+                error: action.payload,
+                apartmentData:null,
+               
             }
             
             break;
+    
+        
         case ReducerTerms.POST_ERROR:
             
             break;
