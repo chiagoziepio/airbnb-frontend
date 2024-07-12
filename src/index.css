@@ -54,12 +54,6 @@ body{
   
   align-items: flex-start;
 }
-.flexCenter{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .innerwidth{
   width: 100%;
   

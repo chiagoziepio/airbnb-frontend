@@ -46,6 +46,7 @@
     background-color: white;
     padding: 5px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     height: 2.9rem;
     border-radius: 10px;
@@ -53,7 +54,7 @@
     width: 99%;
 }
 .hero form input{
-    width: 85%;
+    width: 95%;
     height: 100%;
     border: none;
     outline: none;

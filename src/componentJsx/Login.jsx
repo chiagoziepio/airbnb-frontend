@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../ComponentCSS/form.css";
 import { ReducerTerms } from "../ReducerFile";
 import { myApp } from "../context";
@@ -10,6 +10,7 @@ const Login = () => {
   const { dispatch, state } = useContext(Context);
 const [ username , setUsername] = useState("")
 const [password, setPassword]= useState("")
+const navigate = useNavigate()
 const handleLoginSubmit =  (e)=>{
   e.preventDefault()
   axios.defaults.withCredentials = true;
@@ -25,7 +26,7 @@ const handleLoginSubmit =  (e)=>{
         type: ReducerTerms.LOGIN_SUCCESS,
         payload: data
       })
-      
+      navigate("/dashboard")
     } catch (error) {
       console.log(error);
       dispatch({

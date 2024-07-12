@@ -1,10 +1,11 @@
 
 export const InitialState ={
-    user: null,
+    user: [],
     apartmentData: [],
     loading: false,
     error:null,
-    feedbackMsg: ""
+    feedbackMsg: "",
+    bookedApartment : null
 }
 
 export const ReducerTerms = {
@@ -31,7 +32,11 @@ export const ReducerTerms = {
     LOGIN_ERROR:"login_error",
     REGISTER_START: "register_start",
     REGISTER_SUCCESS: "register_success",
-    REGISTER_ERROR: "register_error"
+    REGISTER_ERROR: "register_error",
+    VERIFY_USER_START: "verify_user_start",
+    VERIFY_USER_SUCCESS: "verify_user_success",
+    VERIFY_USER_ERROR: "verify_user_error"
+
     
 
 }
@@ -123,8 +128,57 @@ export const ReducerTerms = {
                 error: action.payload,
                 feedbackMsg: ""
             }
+        case ReducerTerms.VERIFY_USER_START:
+            console.log("verify start");
+            return{
+                ...state,
+                loading: true,
+                error: null,
+                bookedApartment: null,
+                user: []
+            }
+        case ReducerTerms.VERIFY_USER_SUCCESS:
+            console.log("verify success");
+            return{
+                ...state,
+                loading: false,
+                user: action.payload
+            }
+        case ReducerTerms.VERIFY_USER_ERROR:
+            console.log("verify error");
+            return{
+                ...state,
+                user: [],
+                error: action.payload
+            }
             
-            break;
+        case ReducerTerms.GET_BOOKEDAPARTMENT_START:
+            console.log("get Ap start");
+            return{
+                ...state,
+                error: null,
+                bookedApartment: null,
+                
+            }    
+    
+        
+        case ReducerTerms.GET_BOOKED_APARTMENT_SUCCESS:
+            console.log("get Ap success");
+            return{
+                ...state,
+                bookedApartment: action.payload,
+                
+            }    
+    
+        
+        case ReducerTerms.GET_BOOKED_APARTMENT_ERROR:
+            console.log("get Ap error");
+            return{
+                ...state,
+                error: action.payload,
+                bookedApartment:null,
+                
+            }    
     
         
         default:

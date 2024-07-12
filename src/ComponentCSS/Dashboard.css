@@ -1,0 +1,89 @@
+.dashboard{
+    flex-grow: 1;
+}
+.dashboardBx{
+    padding-top: 2rem;
+}
+.felicitation_listing{
+    margin-bottom: 3rem;
+}
+.felicitation_listing h4{
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.felicitation_listing h4 span{
+    text-transform:capitalize;
+    color: #333;
+    margin-left: 0.5rem;
+
+}
+.felicitation_listing button{
+    border: none;
+    border-radius: 10px;
+    width: 8.7rem;
+    padding: 4px;
+    height: 2.5rem;
+    background: var(--button-sec-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+.listingLink{
+    text-decoration: none;
+    color: white;
+}
+
+.BookedApartment p{
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+
+.BookedApartment button{
+    border: none;
+    border-radius: 10px;
+    width:5rem;
+    height: 2.5rem;
+    background: var(--button-sec-color);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+.bookedApartment_wrapper{
+    width: 100%;
+    margin-top: 3rem;
+    padding: 10px;
+}
+.bookedApartment_wrapper p{
+    color: var(--primary-color);
+}
+.bookedApartments{
+    width: 60%;
+    max-width: 240px;
+    min-width: 150px;
+    transition: all .4s ease;
+}
+.bookedApartments:hover{
+border-bottom: 2px solid #333;
+}
+.Ap_name_btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+.Ap_name_btn img{
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+}
+.Ap_name_btn button{
+    background-color: firebrick;
+    font-size: 17px;
+    cursor: pointer;
+}
+.bookedApartmentBx p{
+    font-size: 17px;
+    font-weight: 600;
+}
