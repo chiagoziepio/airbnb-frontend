@@ -83,7 +83,7 @@ const Dasboard = () => {
                           <div className="bookedApartmentBx" key={Ap._id}>
                             <div className="bookedApartments">
                               <div className="Ap_name_btn">
-                                <img src="img/2.jpg" alt={Ap.title} />
+                                <img src={Ap.img} alt={Ap.title} />
                                 <button>cancel</button>
                               </div>
                               <p>{Ap.title}</p>

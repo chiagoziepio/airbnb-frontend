@@ -72,6 +72,7 @@ export const ReducerTerms = {
             console.log("login error");
             return{
                 ...state,
+                loading:false,
                 error:  action.payload,
             }
             
@@ -103,6 +104,7 @@ export const ReducerTerms = {
                 ...state,
                 error: action.payload,
                 apartmentData:null,
+                FA_loading: false
                
             }
             
@@ -132,7 +134,9 @@ export const ReducerTerms = {
             return{
                 ...state,
                 error: action.payload,
+                RU_loading : false,
                 feedbackMsg: ""
+
             }
         case ReducerTerms.VERIFY_USER_START:
             console.log("verify start");
@@ -155,6 +159,7 @@ export const ReducerTerms = {
             return{
                 ...state,
                 user: [],
+                VU_loading: false,
                 error: action.payload
             }
             
@@ -201,6 +206,21 @@ export const ReducerTerms = {
             return{
                 ...state,
                 LA_loading:false
+            }
+        case ReducerTerms.BOOK_APARTMENT_START:
+            return{
+                ...state,
+                BA_loading: true,
+            }
+        case ReducerTerms.BOOK_APARTMENT_SUCCESS:
+            return{
+                ...state,
+                BA_loading: false,
+            }
+        case ReducerTerms.BOOK_APARTMENT_ERROR:
+            return{
+                ...state,
+                BA_loading: false,
             }
         
         default:
