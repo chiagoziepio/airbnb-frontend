@@ -56,7 +56,7 @@ const Dasboard = () => {
     }
   };
   const bookedApartment = state.bookedApartment;
-  
+
   return (
     <div className=" dashboard">
       <div className="innerwidth dashboardBx">
@@ -70,27 +70,35 @@ const Dasboard = () => {
                     welcome <span>{use.username}</span>
                   </h4>
                   <button>
-                    <Link to = "/listapartment" className="listingLink">list an aprtment</Link></button>
+                    <Link to="/listapartment" className="listingLink">
+                      list an aprtment
+                    </Link>
+                  </button>
                 </div>
                 <div className=" flexStart BookedApartment">
                   <p>This are apartments you booked</p>
-                  <button onClick={HandleGetBookedApartment}>Check</button>
+                  <button onClick={HandleGetBookedApartment}>
+                    {state.GBA_loading ? "checking..." : "Check"}
+                  </button>
                   {bookedApartment !== null && (
                     <div className="bookedApartment_wrapper">
-                      {bookedApartment.length !== 0?
-                       <div>
-                        {bookedApartment.map(Ap =>(
-                          <div className="bookedApartmentBx" key={Ap._id}>
-                            <div className="bookedApartments">
-                              <div className="Ap_name_btn">
-                                <img src={Ap.img} alt={Ap.title} />
-                                <button>cancel</button>
+                      {bookedApartment.length !== 0 ? (
+                        <div>
+                          {bookedApartment.map((Ap) => (
+                            <div className="bookedApartmentBx" key={Ap._id}>
+                              <div className="bookedApartments">
+                                <div className="Ap_name_btn">
+                                  <img src={Ap.img} alt={Ap.title} />
+                                  <button>cancel</button>
+                                </div>
+                                <p>{Ap.title}</p>
                               </div>
-                              <p>{Ap.title}</p>
                             </div>
-                          </div>
-                        ))}
-                      </div> : <p>No booked Apartment</p>}
+                          ))}
+                        </div>
+                      ) : (
+                        <p>No booked Apartment</p>
+                      )}
                     </div>
                   )}
                 </div>

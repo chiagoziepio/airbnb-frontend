@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Apartments from "../Apartment";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../ComponentCSS/airbnb.css";
 import { Context } from "../context";
 import axios from "axios";
@@ -11,6 +11,7 @@ const Airbnbs = () => {
   const { dispatch, state, BASE_URL, handleBookApartment } =
     useContext(Context);
   const apartments = state.apartmentData;
+  const navigate = useNavigate()
   useEffect(() => {
     const HandleGetApartments = async () => {
       try {
@@ -24,12 +25,14 @@ const Airbnbs = () => {
           payload: data,
         });
       } catch (error) {
+        console.log(error);
         dispatch({
           type: ReducerTerms.FETCH_APARTMENT_ERROR,
           payload: error.response.data.msg,
         });
+        alert(error.response.data.msg)
+       navigate("/login")
 
-        console.log(error);
       }
     };
     HandleGetApartments();
@@ -54,12 +57,12 @@ const Airbnbs = () => {
           <div>
             {apartments.length ? (
               <div className="apartmentbx">
-                {apartments.map((apartment) => (
+                {apartments.map((apartment, index) => (
                   <div className="apartment">
                     <Link
-                      to={`/viewapartment/${apartment.id}`}
+                      to={`/viewapartment/${apartment._id}`}
                       className="apartmentLink"
-                      key={apartment._id}
+                      key={index}
                     >
                       <div className="apartmentImg">
                         <img src={apartment.img} alt="" />
