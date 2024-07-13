@@ -5,7 +5,13 @@ export const InitialState ={
     loading: false,
     error:null,
     feedbackMsg: "",
-    bookedApartment : null
+    bookedApartment : null,
+    LA_loading: false,
+    FA_loading: false,
+    GBA_loading:false,
+    BA_loading: false,
+    RU_loading : false,
+    VU_loading: false
 }
 
 export const ReducerTerms = {
@@ -74,7 +80,7 @@ export const ReducerTerms = {
             console.log("fAp start");
             return{
                 ...state,
-                loading: true,
+                FA_loading: true,
                 error: null
             }
             
@@ -83,7 +89,7 @@ export const ReducerTerms = {
             console.log("fAp success");
             return{
                 ...state,
-                loading: false,
+                FA_loading: false,
                 apartmentData: action.payload,
                 error: null
             }
@@ -109,7 +115,7 @@ export const ReducerTerms = {
                 ...state,
                 error: null,
                 feedbackMsg: "",
-                loading: true
+                RU_loading: true
             }
             break;
         case ReducerTerms.REGISTER_SUCCESS:
@@ -118,7 +124,7 @@ export const ReducerTerms = {
                 ...state,
                 error: null,
                 feedbackMsg: action.payload,
-                loading: false
+                RU_loading : false
             }
             
             break;
@@ -132,7 +138,7 @@ export const ReducerTerms = {
             console.log("verify start");
             return{
                 ...state,
-                loading: true,
+                VU_loading: true,
                 error: null,
                 bookedApartment: null,
                 user: []
@@ -141,7 +147,7 @@ export const ReducerTerms = {
             console.log("verify success");
             return{
                 ...state,
-                loading: false,
+                VU_loading: false,
                 user: action.payload
             }
         case ReducerTerms.VERIFY_USER_ERROR:
@@ -157,6 +163,7 @@ export const ReducerTerms = {
             return{
                 ...state,
                 error: null,
+                GBA_loading:true,
                 bookedApartment: null,
                 
             }    
@@ -166,6 +173,7 @@ export const ReducerTerms = {
             console.log("get Ap success");
             return{
                 ...state,
+                GBA_loading:false,
                 bookedApartment: action.payload,
                 
             }    
@@ -179,7 +187,21 @@ export const ReducerTerms = {
                 bookedApartment:null,
                 
             }    
-    
+        case ReducerTerms.POST_APARTMENT_START:
+            return{
+                ...state,
+                LA_loading: true,
+            }
+        case ReducerTerms.POST_APARTMENT_SUCCESS:
+            return{
+                ...state,
+                LA_loading: false
+            }
+        case ReducerTerms.POST_APARTMENT_ERROR:
+            return{
+                ...state,
+                LA_loading:false
+            }
         
         default:
            return state

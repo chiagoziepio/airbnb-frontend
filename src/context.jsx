@@ -4,7 +4,7 @@ import { InitialState, ReducerTerms} from "./ReducerFile";
 import Reducer from "./ReducerFile";
 
 
-export const Context = createContext(InitialState);
+export const Context = createContext();
 
 const ContextProvier = ({ children }) => {
  
@@ -14,13 +14,14 @@ const ContextProvier = ({ children }) => {
   const [password, setPassword] = useState("");
   const [cPassword, setCpassword] = useState("");
   const [name, setName] = useState("") */
- 
+ const BASE_URL = "http://localhost:4000"
 
   return (
     <Context.Provider
       value={{
         state,
-        dispatch
+        dispatch,
+        BASE_URL
       }}
     >
       {children}
