@@ -6,11 +6,34 @@
     align-items: center;
 }
 .veiwApartmentBx{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     padding-top: 3rem;
+    
+}
+.apartmentandmap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid green;
+    min-height: 30.1rem;
+    padding: 10px;
+
+}
+.features{
+    margin-top: 1rem;
+    font-size: 19px;
+}
+.features p{
+    color:var(--button-sec-color);
+    margin-bottom: 0.6rem;
+}
+.features div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem;
 }
 .DApartment{
     display: flex;
@@ -19,6 +42,7 @@
     max-width: 500px;
     height: 30rem;
     padding: 6px;
+    
 }
 .DApartment .apartImg{
     width: 100%;
