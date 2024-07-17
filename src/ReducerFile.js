@@ -94,7 +94,7 @@ const Reducer = (state, action) => {
       return {
         ...state,
         error: action.payload,
-        apartmentData: null,
+        apartmentData: [],
         FA_loading: false,
       };
 

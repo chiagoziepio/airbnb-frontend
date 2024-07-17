@@ -33,6 +33,7 @@ const handleLoginSubmit =  (e)=>{
         type:ReducerTerms.LOGIN_ERROR,
         payload: error.response.data.msg
       })
+      alert("username or password incorrect!")
     }
   }
   handleLogin()
@@ -69,7 +70,7 @@ const handleLoginSubmit =  (e)=>{
               Register
             </Link>
           </p>
-          <button type="submit">Sign-in</button>
+          <button type="submit">{state.loading ? "Logging in..." : "Sign-in"}</button>
         </form>
       </div>
     </div>

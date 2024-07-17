@@ -54,6 +54,7 @@ const Header = () => {
                     textDecoration: "none",
                     color: "white"
                   }}
+                  key={user._id}
                 >
                   {user.username.charAt(0).toUpperCase()}
                 </NavLink>

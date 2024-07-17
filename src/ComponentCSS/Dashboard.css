@@ -23,9 +23,9 @@
     border-radius: 10px;
     width: 8.7rem;
     padding: 4px;
-    height: 2.5rem;
+    height: 3.3rem;
     background: var(--button-sec-color);
-    font-size: 18px;
+    font-size: 17px;
     cursor: pointer;
 }
 .listingLink{

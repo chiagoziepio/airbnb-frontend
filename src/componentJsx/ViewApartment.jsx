@@ -4,11 +4,13 @@ import Apartment from "../Apartment";
 import axios from "axios";
 import { ReducerTerms } from "../ReducerFile";
 import { Context } from "../context";
+import GeoCode from "../GeoCode";
 import "../ComponentCSS/ViewApartment.css";
 
 const ViewApartment = () => {
   const { id } = useParams();
-  const { dispatch, state, BASE_URL, handleBookApartment } = useContext(Context);
+  const { dispatch, state, BASE_URL, handleBookApartment } =
+    useContext(Context);
   /* const convertedId = Number(id);
   const theApartment = Apartment.filter((apart) => apart.id === convertedId); */
   useEffect(() => {
@@ -35,7 +37,6 @@ const ViewApartment = () => {
     HandleGetOneApartment();
   }, [dispatch]);
   const theApartment = state.one_apartment;
-  console.log(theApartment);
   return (
     <div className="viweApartment">
       <div className="veiwApartmentBx innerwidth">
@@ -52,52 +53,53 @@ const ViewApartment = () => {
             Fetching specific Apartment....
           </p>
         ) : (
-          <div >
+          <div>
             {theApartment.length && (
               <div className="apartmentandmap">
                 {theApartment.map((apart) => (
                   <div className="DApartment" key={apart._id}>
-                    <div className="flexRow title-status">
-                      <h4>{apart.title}</h4>
-                      <span className="status">{apart.status}</span>
-                    </div>
-                    <div className="apartImg">
-                      <img src={apart.img} alt={`apartment: ${apart._id}`} />
-                    </div>
-                    <div className="other-detail">
-                      <span>${apart.rentalPrice}</span>
-                      <p className="apartmentLocation">{apart.location}</p>
-                      <p className="details">{apart.des}</p>
-                    </div>
-                    <div className="features">
-                      <p>Apartment Features</p>
-                      <div>
-                      <span>
-                        Beds:{apart.bed}
-                      </span>
-                      <span>
-                        Bathrooms:{apart.bathroom}
-                      </span>
-                      <span>
-                        Rooms:{apart.room}
-                      </span>
-
+                    <div className="image_title_status">
+                      <div className="flexRow title-status">
+                        <h4>{apart.title}</h4>
+                        <span className="status">{apart.status}</span>
                       </div>
-                      
+                      <div className="apartImg">
+                        <img src={apart.img} alt={`apartment: ${apart._id}`} />
+                      </div>
                     </div>
-                    <button
-                      className={
-                        apart.status === "occupied"
-                          ? "bookingBtn taken"
-                          : "bookingBtn free"
-                      }
-                      onClick={() => handleBookApartment(apart._id)}
-                    >
-                      {state.BA_loading ? "booking.." : "Book now"}
-                    </button>
+                    <div className="map_other-details_features">
+                      <div className="of">
+                        <div className="other-detail">
+                          <span>${apart.rentalPrice}</span>
+                          <p className="apartmentLocation">{apart.location}</p>
+                          <p className="details">{apart.des}</p>
+                        </div>
+                        <div className="features">
+                          <p>Apartment Features</p>
+                          <div>
+                            <span>Beds:{apart.bed}</span>
+                            <span>Bathrooms:{apart.bathroom}</span>
+                            <span>Rooms:{apart.room}</span>
+                          </div>
+                        </div>
+                        <button
+                          className={
+                            apart.status === "occupied"
+                              ? "bookingBtn taken"
+                              : "bookingBtn free"
+                          }
+                          onClick={() => handleBookApartment(apart._id)}
+                        >
+                          {state.BA_loading ? "booking.." : "Book now"}
+                        </button>
+                      </div>
+                      <div className="mapBx">
+                
+                        <GeoCode/>
+                      </div>
+                    </div>
                   </div>
                 ))}
-                <div>map</div>
               </div>
             )}
           </div>
