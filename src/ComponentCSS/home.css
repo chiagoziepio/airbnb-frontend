@@ -9,6 +9,8 @@
 .heroBx{
     padding: 1.9rem;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
     
 }
@@ -84,15 +86,16 @@
     .heroBx{
         display: flex;
         flex-direction: column;
-        
-        justify-content: center;
-        align-items: center;
-       
-        
-       
+        column-gap: 1.7rem;
+        width: 100%;
+        align-items:center;
     }
     .orange-cirle{
         right: 2.8rem;
         top: 25px;
+    }
+    .heroTxt{
+        min-height: 25rem;
+        width: 100%;
     }
 }
