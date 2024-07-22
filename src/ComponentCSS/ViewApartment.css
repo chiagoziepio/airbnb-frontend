@@ -94,3 +94,16 @@
     z-index: 0;
     
 }
+@media(max-width:720px){
+    .map_other-details_features{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .of{
+        width: 100%;
+    }
+    .mapBx{
+        width: 100%;
+    }
+}

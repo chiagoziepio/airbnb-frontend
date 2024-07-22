@@ -68,7 +68,8 @@ body{
   color: var(--main-text-color);
 }
 .imgBx{
-  width: 20rem;
+  max-width: 20rem;
+  min-width: 200px;
   height: 25rem;
   border-top-left-radius: 10rem;
  border-top-right-radius: 10rem;
@@ -96,10 +97,16 @@ body{
 .disableScroll{
   overflow-y: hidden;
 }
-@media(min-width:1336px){
+@media(min-width:1236px){
   .innerwidth{
     max-width: 1000px ;
     margin: auto;
     
+  }
+
+}
+@media(max-width:620px){
+  html{
+    font-size: 13px;
   }
 }

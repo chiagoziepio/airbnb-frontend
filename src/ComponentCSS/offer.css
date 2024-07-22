@@ -1,8 +1,10 @@
 .offerBx{
-    margin-top: 2rem;
+    padding-top: 2rem;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 3rem;
+    padding: 0 15px;
    
 }
 
@@ -40,7 +42,7 @@
 .rotate{
     transform: rotate(180deg);
 }
-@media (max-width:680px){
+@media (max-width:720px){
     .offerBx{
         margin-top: 2rem;
         display: flex;
