@@ -6,7 +6,8 @@ import "../ComponentCSS/contact.css";
 const Contact = () => {
   return (
     <div className="contacts">
-      <div className=" contactBx innerwidth flexRow ">
+      <div className=" contactBx innerwidth ">
+
         <div className="contactTxt">
           <div className="flexStart">
             <h3 className="sectionTitle">Contact Us</h3>

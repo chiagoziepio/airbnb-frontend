@@ -4,7 +4,7 @@ const Footer = () => {
   const date = new Date();
   return (
     <footer>
-      <div className="innerwidth flexRow">
+      <div className="innerwidth footerBx">
         <div className="copywright">
           <p>&copy;copyWright COZY HOMES</p>
           <span> {date.getFullYear()}</span>

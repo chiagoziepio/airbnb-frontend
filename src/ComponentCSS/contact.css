@@ -52,7 +52,6 @@
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         gap: 3rem;
         
@@ -66,5 +65,8 @@
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
+    }
+    .contactOpt{
+        width: 90%;
     }
 }

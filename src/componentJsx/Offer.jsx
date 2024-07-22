@@ -17,7 +17,8 @@ const Offer = () => {
   };
   return (
     <div className="offer">
-      <div className="innerwidth flexRow offerBx">
+      <div className="innerwidth offerBx">
+
         <div className="imgBx">
           <img src="img/9.jpg" alt="" />
         </div>
