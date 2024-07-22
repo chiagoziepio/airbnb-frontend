@@ -93,6 +93,9 @@ body{
   font-size: 14px;
   font-weight: 600;
 }
+.disableScroll{
+  overflow-y: hidden;
+}
 @media(min-width:1336px){
   .innerwidth{
     max-width: 1000px ;

@@ -34,6 +34,8 @@ header{
 }
 .linksBX{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     width:40% ;
 }
@@ -58,4 +60,42 @@ ul li .navlink.active{
 .navBtn{
     color: var(--main-text-color);
     text-decoration: none;
+}
+.meun-icon{
+    display: none;
+}
+.menulinksBX{
+    display: none;
+}
+
+@media(max-width: 720px){
+    .linksBX{
+        display:none;
+        border: 1px solid green;
+    }
+    .meun-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+    }
+    .menulinksBX{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        right: 0;
+        padding: 10px;
+        
+    }
+    .menulinksBX ul{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+    }
+    .close-icon{
+        margin-top: 1.1rem;
+        text-align: center;
+    }
 }
