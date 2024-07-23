@@ -7,7 +7,11 @@ footer{
 }
 .footerBx{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerBx a{
+    color:var(--subtle-text-color);
 }
 @media(max-width: 520px){
     .footerBx{

@@ -10,7 +10,7 @@ const Footer = () => {
           <span> {date.getFullYear()}</span>
         </div>
         <div className="gitLink">
-          <a href="#">Code source</a>
+          <a href="https://github.com/chiagoziepio/airbnb-frontend">Code source</a>
         </div>
       </div>
     </footer>
