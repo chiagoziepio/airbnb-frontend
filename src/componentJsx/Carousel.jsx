@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, useSwiper, SwiperSlide } from "swiper/react";
 import sliderOpts from "../swiperUtils";
-import "Swiper/css";
+//import "Swiper/css";
 import hotPicks from "../Hotpicks";
 import "../ComponentCSS/carousel.css";
 
