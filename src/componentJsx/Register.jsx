@@ -41,6 +41,7 @@ const Register = () => {
         type: ReducerTerms.REGISTER_ERROR,
         payload: error.response.data.msg,
       });
+      alert(error.response.data.msg)
     }
     setEmail("");
     setCpassword("");
