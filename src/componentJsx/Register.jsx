@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReducerTerms } from "../ReducerFile";
 import axios from "axios";
 import "../ComponentCSS/form.css";
@@ -13,6 +13,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const { dispatch, state, BASE_URL,handleLogout } = useContext(Context);
   const user = state.user;
+  const navigate = useNavigate()
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -32,6 +33,8 @@ const Register = () => {
         type: ReducerTerms.REGISTER_SUCCESS,
         payload: data,
       });
+      alert(data)
+      navigate("/login")
     } catch (error) {
       console.log(error);
       dispatch({
@@ -109,7 +112,7 @@ const Register = () => {
                 sign-in
               </Link>
             </p>
-            <button type="submit">Register</button>
+            <button type="submit">{state.RU_loading ? "Registering" : "Register"}</button>
           </form>
         )}
       </div>
