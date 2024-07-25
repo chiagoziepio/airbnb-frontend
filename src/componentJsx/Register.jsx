@@ -11,8 +11,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [cPassword, setCpassword] = useState("");
   const [name, setName] = useState("");
-  const { dispatch, state } = useContext(Context);
-
+  const { dispatch, state, BASE_URL,handleLogout } = useContext(Context);
+  const user = state.user;
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -21,10 +21,12 @@ const Register = () => {
       });
       if (password !== cPassword)
         throw new Error("both passwords are not the same");
-      const res = await axios.post(
-        "http://localhost:4000/api/airbnb/user//register",
-        { email, username, password, name }
-      );
+      const res = await axios.post(`${BASE_URL}/api/airbnb/user//register`, {
+        email,
+        username,
+        password,
+        name,
+      });
       const data = await res.data.msg;
       dispatch({
         type: ReducerTerms.REGISTER_SUCCESS,
@@ -46,62 +48,70 @@ const Register = () => {
   return (
     <div className="register">
       <div className="innerwidth formBx">
-        <form on onSubmit={handleRegister}>
-          <h3>Registration</h3>
-          <div className="input-control">
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Fullname"
-              required
-            />
+        {user.length ? (
+          <div className="logoutBx">
+            <p>An account is logged in on this device</p>
+            <button className="logout-btn" onClick={handleLogout}>logout</button>
           </div>
-          <div className="input-control">
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              placeholder="username"
-            />
-          </div>
-          <div className="input-control">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Email"
-            />
-          </div>
+          
+        ) : (
+          <form on onSubmit={handleRegister}>
+            <h3>Registration</h3>
+            <div className="input-control">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Fullname"
+                required
+              />
+            </div>
+            <div className="input-control">
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                placeholder="username"
+              />
+            </div>
+            <div className="input-control">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Email"
+              />
+            </div>
 
-          <div className="input-control">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="password"
-            />
-          </div>
-          <div className="input-control">
-            <input
-              type="password"
-              value={cPassword}
-              onChange={(e) => setCpassword(e.target.value)}
-              required
-              placeholder="confirm password"
-            />
-          </div>
-          <p>
-            Already have an account?{" "}
-            <Link to="/login" className="formLink">
-              sign-in
-            </Link>
-          </p>
-          <button type="submit">Register</button>
-        </form>
+            <div className="input-control">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="password"
+              />
+            </div>
+            <div className="input-control">
+              <input
+                type="password"
+                value={cPassword}
+                onChange={(e) => setCpassword(e.target.value)}
+                required
+                placeholder="confirm password"
+              />
+            </div>
+            <p>
+              Already have an account?{" "}
+              <Link to="/login" className="formLink">
+                sign-in
+              </Link>
+            </p>
+            <button type="submit">Register</button>
+          </form>
+        )}
       </div>
     </div>
   );

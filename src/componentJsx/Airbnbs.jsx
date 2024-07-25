@@ -17,7 +17,7 @@ const Airbnbs = () => {
       try {
         dispatch({ type: ReducerTerms.FETCH_APARTMENT_START });
         const res = await axios.get(
-          "http://localhost:4000/api/airbnb/apartment/getapartments"
+          `${BASE_URL}/api/airbnb/apartment/getapartments`,{withCredentials: true}
         );
         const data = await res.data.msg;
         await dispatch({

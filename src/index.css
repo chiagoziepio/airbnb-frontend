@@ -97,6 +97,21 @@ body{
 .disableScroll{
   overflow-y: hidden;
 }
+.logoutBx p{
+  font-size: 1.7rem;
+  font-weight: 600;
+  
+}
+.logout-btn{
+  width: 9rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  background: var(--button-sec-color);
+  padding: 10px;
+  margin-top: 1.1rem;
+}
 @media(min-width:1236px){
   .innerwidth{
     max-width: 1000px ;

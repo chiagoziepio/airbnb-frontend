@@ -23,7 +23,8 @@ const ListApartment = () => {
       });
       const res = await axios.post(
         `${BASE_URL}/api/airbnb/apartment/createApartment`,
-        { title, des, status, rentalPrice, bed, room, bathroom, location }
+        { title, des, status, rentalPrice, bed, room, bathroom, location },
+        { withCredentials: true }
       );
       const data = await res.data.msg;
       dispatch({

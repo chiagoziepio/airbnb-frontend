@@ -13,6 +13,7 @@ export const InitialState = {
   RU_loading: false,
   VU_loading: false,
   GOA_loading: false,
+  LO_loading: false
 };
 
 export const ReducerTerms = {
@@ -43,12 +44,13 @@ export const ReducerTerms = {
   VERIFY_USER_START: "verify_user_start",
   VERIFY_USER_SUCCESS: "verify_user_success",
   VERIFY_USER_ERROR: "verify_user_error",
+  LOGOUT_START: "logout_start",
+  LOGOUT_SUCCESS: "logout_success"
 };
 
 const Reducer = (state, action) => {
   switch (action.type) {
     case ReducerTerms.LOGIN_START:
-      console.log("login start");
 
       return {
         ...state,
@@ -56,7 +58,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.LOGIN_SUCCESS:
-      console.log("login success");
 
       return {
         ...state,
@@ -65,7 +66,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.LOGIN_ERROR:
-      console.log("login error");
       return {
         ...state,
         loading: false,
@@ -73,7 +73,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.FETCH_APARTMENT_START:
-      console.log("fAp start");
       return {
         ...state,
         FA_loading: true,
@@ -81,7 +80,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.FETCH_APARTMENT_SUCCESS:
-      console.log("fAp success");
       return {
         ...state,
         FA_loading: false,
@@ -90,7 +88,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.FETCH_APARTMENT_ERROR:
-      console.log("fAp error");
       return {
         ...state,
         error: action.payload,
@@ -101,7 +98,6 @@ const Reducer = (state, action) => {
       break;
 
     case ReducerTerms.REGISTER_START:
-      console.log("register start");
       return {
         ...state,
         error: null,
@@ -110,7 +106,6 @@ const Reducer = (state, action) => {
       };
       break;
     case ReducerTerms.REGISTER_SUCCESS:
-      console.log("register success");
       return {
         ...state,
         error: null,
@@ -127,7 +122,6 @@ const Reducer = (state, action) => {
         feedbackMsg: "",
       };
     case ReducerTerms.VERIFY_USER_START:
-      console.log("verify start");
       return {
         ...state,
         VU_loading: true,
@@ -136,14 +130,12 @@ const Reducer = (state, action) => {
         user: [],
       };
     case ReducerTerms.VERIFY_USER_SUCCESS:
-      console.log("verify success");
       return {
         ...state,
         VU_loading: false,
         user: action.payload,
       };
     case ReducerTerms.VERIFY_USER_ERROR:
-      console.log("verify error");
       return {
         ...state,
         user: [],
@@ -152,7 +144,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.GET_BOOKEDAPARTMENT_START:
-      console.log("get Ap start");
       return {
         ...state,
         error: null,
@@ -161,7 +152,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.GET_BOOKED_APARTMENT_SUCCESS:
-      console.log("get Ap success");
       return {
         ...state,
         GBA_loading: false,
@@ -169,7 +159,6 @@ const Reducer = (state, action) => {
       };
 
     case ReducerTerms.GET_BOOKED_APARTMENT_ERROR:
-      console.log("get Ap error");
       return {
         ...state,
         error: action.payload,
@@ -223,6 +212,18 @@ const Reducer = (state, action) => {
         ...state,
         GOA_loading: false,
         one_apartment : []
+      };
+    case ReducerTerms.LOGOUT_START:
+      return {
+        ...state,
+        LO_loading: true
+      };
+    case ReducerTerms.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        user: [],
+        apartmentData: [],
+        LO_loading: false
       };
     default:
       return state;

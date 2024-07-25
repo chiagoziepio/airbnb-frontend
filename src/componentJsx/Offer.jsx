@@ -20,7 +20,7 @@ const Offer = () => {
       <div className="innerwidth offerBx">
 
         <div className="imgBx">
-          <img src="img/9.jpg" alt="" />
+          <img src="https://i.pinimg.com/236x/d5/dd/e9/d5dde97c93285ba636019e4806c9eb64.jpg" alt="" />
         </div>
         <div className="txtpart">
           <div className="flexStart">

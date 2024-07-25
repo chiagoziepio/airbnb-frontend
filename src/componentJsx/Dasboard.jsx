@@ -6,16 +6,18 @@ import "../ComponentCSS/Dashboard.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const Dasboard = () => {
-  const { dispatch, state } = useContext(Context);
+  const { dispatch, state, BASE_URL,handleLogout } = useContext(Context);
   const navigate = useNavigate();
   useEffect(() => {
+    
     const HandleGetUser = async () => {
+      
       try {
         dispatch({
           type: ReducerTerms.VERIFY_USER_START,
         });
         const res = await axios.get(
-          "http://localhost:4000/api/airbnb/user/getUser"
+          `${BASE_URL}/api/airbnb/user/getUser`,{withCredentials: true}
         );
         const data = await res.data.user;
         dispatch({
@@ -28,6 +30,7 @@ const Dasboard = () => {
           type: ReducerTerms.VERIFY_USER_ERROR,
           payload: error.response.data.msg,
         });
+        alert(error.response.data.msg)
         navigate("/");
       }
     };
@@ -40,7 +43,7 @@ const Dasboard = () => {
         type: ReducerTerms.GET_BOOKEDAPARTMENT_START,
       });
       const res = await axios.get(
-        "http://localhost:4000/api/airbnb/dashboard/getBookedApartment"
+        `${BASE_URL}/api/airbnb/dashboard/getBookedApartment`,{withCredentials: true}
       );
       const data = await res.data.msg;
       dispatch({
@@ -102,6 +105,7 @@ const Dasboard = () => {
                     </div>
                   )}
                 </div>
+                <button className="logout-btn" onClick={handleLogout}>logout</button>
               </div>
             ))}
           </div>

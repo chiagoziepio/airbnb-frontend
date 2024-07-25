@@ -51,7 +51,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="imgBx">
-          <img src="img/10.jpg" alt="" />
+          <img src="https://i.pinimg.com/236x/58/77/b0/5877b0fedb69a2bf53006ecca2c512bb.jpg" alt="" />
         </div>
       </div>
     </div>
