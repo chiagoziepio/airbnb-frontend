@@ -22,7 +22,7 @@ const Register = () => {
       });
       if (password !== cPassword)
         throw new Error("both passwords are not the same");
-      const res = await axios.post(`${BASE_URL}/api/airbnb/user//register`, {
+      const res = await axios.post(`${BASE_URL}/api/airbnb/user/register`, {
         email,
         username,
         password,
